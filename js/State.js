@@ -1,6 +1,5 @@
 /* ===================================
-AI Director State Manager
-V10.0B-R1
+AI-Director-V1
 =================================== */
 
 const AppState = {
