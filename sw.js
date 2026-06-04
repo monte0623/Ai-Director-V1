@@ -1,5 +1,5 @@
 const CACHE_NAME =
-'ai-director-v10b-r1';
+'ai-director-v1';
 
 const urlsToCache = [
 
