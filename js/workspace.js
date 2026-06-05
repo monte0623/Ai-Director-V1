@@ -1022,3 +1022,29 @@ document
 );
 
 }
+
+function updateSceneField(
+field,
+value
+){
+
+AppState.currentScene[
+field
+] = value;
+
+autoSaveCurrentProject();
+
+}
+
+function updateShotField(
+field,
+value
+){
+
+AppState.currentShot[
+field
+] = value;
+
+autoSaveCurrentProject();
+
+}
