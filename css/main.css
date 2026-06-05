@@ -270,7 +270,9 @@ WORKSPACE
 .workspace{
 display:flex;
 flex-direction:column;
-height:calc(100vh - 60px);
+height:100%;
+min-height:100vh;
+overflow:hidden;
 }
 
 /* ===================================
@@ -310,12 +312,55 @@ DESKTOP LAYOUT
 
 .desktop-layout{
 
+flex:1;
+
 display:flex;
 
-height:
-calc(
-100% - 50px
-);
+overflow:hidden;
+
+}
+
+.script-panel{
+
+width:25%;
+
+}
+
+.scene-panel{
+
+width:18%;
+
+}
+
+.shot-panel{
+
+width:18%;
+
+}
+
+.detail-panel{
+
+flex:1;
+
+}
+
+.panel{
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+}
+
+.panel-body{
+
+flex:1;
+
+overflow:auto;
+
+padding:12px;
 
 }
 
@@ -325,13 +370,17 @@ PANELS
 
 .panel{
 
+display:flex;
+
+flex-direction:column;
+
 border-right:
 1px solid var(--border);
 
-overflow:auto;
-
 background:
 var(--panel);
+
+overflow:hidden;
 
 }
 
@@ -355,6 +404,10 @@ background:#181818;
 }
 
 .panel-body{
+
+flex:1;
+
+overflow:auto;
 
 padding:12px;
 
