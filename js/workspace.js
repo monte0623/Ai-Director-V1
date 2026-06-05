@@ -16,25 +16,61 @@ return `
 
 <div class="workspace">
 
-    <div class="workspace-top">
+   <div class="workspace-top">
 
-        <div class="workspace-title">
+    <div class="workspace-title">
 
-            🎬 ${project.name}
+        🎬 ${project.name}
 
-        </div>
+    </div>
 
-        <div style="margin-left:auto">
+    <div
+    style="
+    margin-left:20px;
+    font-size:14px;
+    color:#ccc;
+    ">
 
-            <button
-            class="btn"
-            onclick="backToProjects()">
+        Scene:
+        ${project.scenes.length}
 
-            返回專案
+        |
 
-            </button>
+        Shot:
+        ${project.shots.length}
 
-        </div>
+        |
+
+        完成:
+        ${
+        project.shots.filter(
+        s=>s.status==="完成"
+        ).length
+        }
+
+    </div>
+
+    <div
+    id="saveIndicator"
+    style="
+    margin-left:auto;
+    margin-right:12px;
+    font-size:14px;
+    ">
+
+        🟢 已儲存
+
+    </div>
+
+    <button
+    class="btn"
+    onclick="backToProjects()">
+
+        返回專案
+
+    </button>
+
+</div>
 
     </div>
 
