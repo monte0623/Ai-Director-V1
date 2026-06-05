@@ -544,55 +544,421 @@ return `
 
 function renderDetailContent(){
 
+/* ==========================
+SHOT DETAIL
+========================== */
+
 if(AppState.currentShot){
+
+const shot =
+AppState.currentShot;
 
 return `
 
-<h3>
+<h3>${shot.shotId}</h3>
 
-${AppState.currentShot.shotId}
-
-</h3>
-
-<br>
-
+<div class="form-group">
+<label>鏡頭說明</label>
 <textarea
-placeholder="鏡頭說明"
-onkeyup="saveShotDescription(this.value)">
-
-${AppState.currentShot.description}
-
+onkeyup="updateShotField(
+'description',
+this.value
+)">
+${shot.description||''}
 </textarea>
+</div>
+
+<div class="form-group">
+<label>景別</label>
+<input
+value="${shot.shotType||''}"
+onchange="updateShotField(
+'shotType',
+this.value
+)">
+</div>
+
+<div class="form-group">
+<label>運鏡</label>
+<input
+value="${shot.movement||''}"
+onchange="updateShotField(
+'movement',
+this.value
+)">
+</div>
+
+<div class="form-group">
+<label>焦段</label>
+<input
+value="${shot.lens||''}"
+onchange="updateShotField(
+'lens',
+this.value
+)">
+</div>
+
+<div class="form-group">
+<label>秒數</label>
+<input
+value="${shot.duration||''}"
+onchange="updateShotField(
+'duration',
+this.value
+)">
+</div>
+
+<div class="form-group">
+<label>優先級</label>
+
+<select
+onchange="updateShotField(
+'priority',
+this.value
+)">
+
+<option
+${shot.priority==='高'?'selected':''}>
+高
+</option>
+
+<option
+${shot.priority==='中'?'selected':''}>
+中
+</option>
+
+<option
+${shot.priority==='低'?'selected':''}>
+低
+</option>
+
+</select>
+
+</div>
 
 `;
 
 }
+
+/* ==========================
+SCENE DETAIL
+========================== */
 
 if(AppState.currentScene){
 
+const scene =
+AppState.currentScene;
+
 return `
 
 <h3>
 
-${AppState.currentScene.sceneId}
+${scene.sceneId}
 
 </h3>
 
-<br>
+<div class="form-group">
+
+<label>
+
+Scene名稱
+
+</label>
 
 <input
-value="${AppState.currentScene.sceneName}"
-onchange="saveSceneName(this.value)">
+value="${scene.sceneName||''}"
+
+onchange="
+updateSceneField(
+'sceneName',
+this.value
+)
+">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+地點
+
+</label>
+
+<input
+value="${scene.location||''}"
+
+onchange="
+updateSceneField(
+'location',
+this.value
+)
+">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+時間
+
+</label>
+
+<select
+
+onchange="
+updateSceneField(
+'time',
+this.value
+)
+">
+
+<option
+${scene.time==='清晨'?'selected':''}>
+清晨
+</option>
+
+<option
+${scene.time==='早上'?'selected':''}>
+早上
+</option>
+
+<option
+${scene.time==='下午'?'selected':''}>
+下午
+</option>
+
+<option
+${scene.time==='黃昏'?'selected':''}>
+黃昏
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+演員
+
+</label>
+
+<input
+value="${scene.actors||''}"
+
+onchange="
+updateSceneField(
+'actors',
+this.value
+)
+">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+收音
+
+</label>
+
+<select
+
+onchange="
+updateSceneField(
+'audio',
+this.value
+)
+">
+
+<option
+${scene.audio==='同步收音'?'selected':''}>
+同步收音
+</option>
+
+<option
+${scene.audio==='環境音'?'selected':''}>
+環境音
+</option>
+
+<option
+${scene.audio==='不收音'?'selected':''}>
+不收音
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+攝影機
+
+</label>
+
+<select
+
+onchange="
+updateSceneField(
+'camera',
+this.value
+)
+">
+
+<option
+${scene.camera==='單機'?'selected':''}>
+單機
+</option>
+
+<option
+${scene.camera==='雙機'?'selected':''}>
+雙機
+</option>
+
+<option
+${scene.camera==='手機'?'selected':''}>
+手機
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+燈光
+
+</label>
+
+<input
+value="${scene.lighting||''}"
+
+onchange="
+updateSceneField(
+'lighting',
+this.value
+)
+">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+道具
+
+</label>
+
+<input
+value="${scene.props||''}"
+
+onchange="
+updateSceneField(
+'props',
+this.value
+)
+">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+服裝
+
+</label>
+
+<input
+value="${scene.costumes||''}"
+
+onchange="
+updateSceneField(
+'costumes',
+this.value
+)
+">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+備註
+
+</label>
+
+<textarea
+
+onkeyup="
+updateSceneField(
+'notes',
+this.value
+)
+">
+
+${scene.notes||''}
+
+</textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Scene狀態
+
+</label>
+
+<select
+
+onchange="
+updateSceneField(
+'status',
+this.value
+)
+">
+
+<option
+${scene.status==='未準備'?'selected':''}>
+未準備
+</option>
+
+<option
+${scene.status==='準備中'?'selected':''}>
+準備中
+</option>
+
+<option
+${scene.status==='拍攝中'?'selected':''}>
+拍攝中
+</option>
+
+<option
+${scene.status==='完成'?'selected':''}>
+完成
+</option>
+
+</select>
+
+</div>
 
 `;
 
 }
 
-return `
-
-請選擇 Scene 或 Shot
-
-`;
+return "請選擇 Scene 或 Shot";
 
 }
 
