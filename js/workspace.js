@@ -115,13 +115,12 @@ return `
         </div>
 
         <div
-        id="mobileStoryboard"
-        class="mobile-page">
+id="mobileDetail"
+class="mobile-page">
 
-            Storyboard
-            （V10.5）
+${renderDetailContent()}
 
-        </div>
+</div>
 
         <div
         id="mobileShooting"
@@ -156,11 +155,11 @@ return `
 
     </button>
 
-    <button onclick="showMobilePage('mobileStoryboard')">
+    <button onclick="showMobilePage('mobileDetail')">
 
-        Board
+Detail
 
-    </button>
+</button>
 
     <button onclick="showMobilePage('mobileShooting')">
 
