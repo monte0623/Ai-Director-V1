@@ -305,12 +305,30 @@ async function autoSaveCurrentProject(){
         return;
     }
 
+    const indicator =
+    document.getElementById(
+        "saveIndicator"
+    );
+
+    if(indicator){
+
+        indicator.innerHTML =
+        "🟡 儲存中...";
+
+    }
+
     await saveProject(
         AppState.currentProject
     );
 
-}
+    if(indicator){
 
+        indicator.innerHTML =
+        "🟢 已儲存";
+
+    }
+
+}
 /* ===================================
 Debug
 =================================== */
