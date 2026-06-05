@@ -42,7 +42,7 @@ const AppState = {
     ========================== */
 
     isMobile:
-        window.innerWidth <= 1000
+        window.innerWidth <= 1280
 
 };
 
@@ -112,6 +112,6 @@ window.addEventListener(
     "resize",
     ()=>{
         AppState.isMobile =
-        window.innerWidth <= 1000;
+        window.innerWidth <= 1280;
     }
 );
