@@ -268,13 +268,9 @@ WORKSPACE
 =================================== */
 
 .workspace{
-
-height:100%;
-
 display:flex;
-
 flex-direction:column;
-
+height:calc(100vh - 60px);
 }
 
 /* ===================================
@@ -483,28 +479,17 @@ MOBILE
 =================================== */
 
 .mobile-layout{
-
-display:none;
-
-height:100%;
-
-padding-bottom:
-var(
---bottom-nav-height
-);
-
+flex:1;
+display:flex;
+flex-direction:column;
+overflow:hidden;
 }
 
 .mobile-page{
-
 display:none;
-
 height:100%;
-
 overflow:auto;
-
 padding:12px;
-
 }
 
 .mobile-page.active{
