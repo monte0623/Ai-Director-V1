@@ -505,11 +505,21 @@ AppState.currentProject.shots.find(
 s=>s.shotId===shotId
 );
 
-setCurrentShot(shot);
+setCurrentScene(scene);
 
-renderApp();
+if(AppState.isMobile){
+
+setTimeout(()=>{
+
+showMobilePage(
+"mobileDetail"
+);
+
+},100);
 
 }
+
+renderApp();
 
 /* ===================================
 Detail
