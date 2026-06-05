@@ -72,8 +72,6 @@ return `
 
 </div>
 
-    </div>
-
     <!-- Desktop -->
 
     <div class="desktop-layout">
