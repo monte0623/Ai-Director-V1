@@ -647,4 +647,45 @@ flex-direction:column;
 
 }
 
+.workspace{
+display:flex;
+flex-direction:column;
+height:100vh;
+}
+
+.workspace-top{
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 16px;
+border-bottom:1px solid #333;
+}
+
+.workspace-body{
+flex:1;
+display:flex;
+overflow:hidden;
+}
+
+.workspace-left{
+width:35%;
+overflow:auto;
+border-right:1px solid #333;
+padding:12px;
+}
+
+.workspace-right{
+flex:1;
+overflow:auto;
+padding:12px;
+}
+
+.workspace-section{
+margin-bottom:24px;
+}
+
+#scriptEditor{
+width:100%;
+min-height:200px;
 }
