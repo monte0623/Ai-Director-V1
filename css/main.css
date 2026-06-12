@@ -629,7 +629,9 @@ display:none;
 
 .mobile-layout{
 
-display:block;
+display:flex;
+flex-direction:column;
+flex:1;
 
 }
 
